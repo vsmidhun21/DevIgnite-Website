@@ -1,21 +1,29 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Send, CheckCircle, Loader } from 'lucide-react'
+import { Send, CheckCircle, Loader, AlertCircle } from 'lucide-react'
+import emailjs from '@emailjs/browser'
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 const initialState = { name: '', email: '', message: '' }
 
 export default function ContactForm() {
-  const [form,    setForm]    = useState(initialState)
+  const [form, setForm] = useState(initialState)
   const [loading, setLoading] = useState(false)
-  const [sent,    setSent]    = useState(false)
-  const [errors,  setErrors]  = useState({})
+  const [sent, setSent] = useState(false)
+  const [error, setError] = useState(null)
+  const [errors, setErrors] = useState({})
 
+  /* ── Field-level validation ── */
   const validate = () => {
     const e = {}
-    if (!form.name.trim())                          e.name    = 'Name is required.'
-    if (!form.email.trim())                         e.email   = 'Email is required.'
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Enter a valid email.'
-    if (!form.message.trim())                       e.message = 'Message is required.'
+    if (!form.name.trim()) e.name = 'Name is required.'
+    if (!form.email.trim()) e.email = 'Email is required.'
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
+      e.email = 'Enter a valid email address.'
+    if (!form.message.trim()) e.message = 'Message cannot be empty.'
     return e
   }
 
@@ -23,29 +31,53 @@ export default function ContactForm() {
     const { name, value } = e.target
     setForm(f => ({ ...f, [name]: value }))
     if (errors[name]) setErrors(er => ({ ...er, [name]: '' }))
+    if (error) setError(null)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const errs = validate()
-    if (Object.keys(errs).length) { setErrors(errs); return }
+    const fieldErrors = validate()
+    if (Object.keys(fieldErrors).length) {
+      setErrors(fieldErrors)
+      return
+    }
+
     setLoading(true)
-    // Simulate async send (no backend)
-    setTimeout(() => {
-      setLoading(false)
+    setError(null)
+
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          product_name: 'DevIgnite',
+          from_name: form.name.trim(),
+          from_email: form.email.trim(),
+          message: form.message.trim(),
+        },
+        { publicKey: PUBLIC_KEY }
+      )
       setSent(true)
       setForm(initialState)
-    }, 1600)
+    } catch (err) {
+      console.error('EmailJS error:', err)
+      setError('Something went wrong. Please try again or reach out directly on GitHub.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
     <div className="contact-form-wrap">
       <AnimatePresence mode="wait">
+
+        {/* ── Success state ── */}
         {sent ? (
           <motion.div
             key="success"
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             className="form-success"
           >
             <div className="form-success-icon">
@@ -62,10 +94,13 @@ export default function ContactForm() {
               style={{ marginTop: 8, padding: '10px 22px' }}
               onClick={() => setSent(false)}
             >
-              Send another
+              Send another message
             </button>
           </motion.div>
+
         ) : (
+
+          /* ── Form ── */
           <motion.form
             key="form"
             initial={{ opacity: 0 }}
@@ -80,14 +115,15 @@ export default function ContactForm() {
                 id="contact-name"
                 name="name"
                 type="text"
-                className="form-input"
+                className={`form-input ${errors.name ? 'form-input--error' : ''}`}
                 placeholder="John Doe"
                 value={form.name}
                 onChange={handleChange}
                 autoComplete="name"
+                disabled={loading}
               />
               {errors.name && (
-                <p style={{ color: '#ef4444', fontSize: '0.78rem', marginTop: 6 }}>{errors.name}</p>
+                <p className="form-field-error">{errors.name}</p>
               )}
             </div>
 
@@ -98,14 +134,15 @@ export default function ContactForm() {
                 id="contact-email"
                 name="email"
                 type="email"
-                className="form-input"
+                className={`form-input ${errors.email ? 'form-input--error' : ''}`}
                 placeholder="you@example.com"
                 value={form.email}
                 onChange={handleChange}
                 autoComplete="email"
+                disabled={loading}
               />
               {errors.email && (
-                <p style={{ color: '#ef4444', fontSize: '0.78rem', marginTop: 6 }}>{errors.email}</p>
+                <p className="form-field-error">{errors.email}</p>
               )}
             </div>
 
@@ -115,25 +152,40 @@ export default function ContactForm() {
               <textarea
                 id="contact-message"
                 name="message"
-                className="form-textarea"
+                className={`form-textarea ${errors.message ? 'form-input--error' : ''}`}
                 placeholder="Tell us about a bug, feature idea, or just say hi..."
                 value={form.message}
                 onChange={handleChange}
+                disabled={loading}
               />
               {errors.message && (
-                <p style={{ color: '#ef4444', fontSize: '0.78rem', marginTop: 6 }}>{errors.message}</p>
+                <p className="form-field-error">{errors.message}</p>
               )}
             </div>
 
+            {/* Global send error */}
+            {error && (
+              <motion.div
+                initial={{ opacity: 0, y: -6 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="form-send-error"
+              >
+                <AlertCircle size={15} />
+                {error}
+              </motion.div>
+            )}
+
+            {/* Submit */}
             <button
               id="contact-submit-btn"
               type="submit"
               className="btn-primary form-submit"
               disabled={loading}
+              style={{ opacity: loading ? 0.75 : 1 }}
             >
               {loading ? (
                 <>
-                  <Loader size={17} style={{ animation: 'spin-slow 1s linear infinite' }} />
+                  <Loader size={17} className="spin-icon" />
                   Sending…
                 </>
               ) : (
