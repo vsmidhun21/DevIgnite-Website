@@ -37,7 +37,7 @@ export default function DownloadSection() {
             <div className="download-ctas">
               <a
                 id="download-exe-btn"
-                href="https://github.com/vsmidhun21/DevIgnite/releases/download/v0.1.0/DevIgniteSetup-v0.1.2.exe"
+                href="https://github.com/vsmidhun21/DevIgnite/releases/download/v0.2.0/DevIgniteSetup-v0.2.0.exe"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-download"
