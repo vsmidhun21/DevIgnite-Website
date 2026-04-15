@@ -60,7 +60,7 @@ export default function DownloadSection() {
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               <p className="download-platform">
                 <Monitor size={14} />
-                Windows 10 / 11 · 64-bit · ~50MB
+                Windows 10 / 11 · 64-bit · ~105MB
               </p>
             </div>
 
