@@ -109,7 +109,7 @@ export default function Features() {
               DevIgnite is actively developed. Star the repo to follow updates and suggest features.
             </p>
             <a
-              href="https://github.com/vsmidhun21/Dev-Project-Launcher"
+              href="https://github.com/vsmidhun21/DevIgnite"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary"

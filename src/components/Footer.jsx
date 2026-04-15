@@ -51,16 +51,16 @@ const socialLinks = [
 
 const links = {
   product: [
-    { label: 'Features',     href: '/#features' },
+    { label: 'Features', href: '/#features' },
     { label: 'How It Works', href: '/#how-it-works' },
-    { label: 'Download',     href: '/#download' },
-    { label: 'FAQ',          href: '/#faq' },
+    { label: 'Download', href: '/#download' },
+    { label: 'FAQ', href: '/#faq' },
   ],
   resources: [
-    { label: 'GitHub Repo',     href: 'https://github.com/vsmidhun21/Dev-Project-Launcher', external: true },
-    { label: 'Releases',        href: 'https://github.com/vsmidhun21/Dev-Project-Launcher/releases', external: true },
-    { label: 'Report an Issue', href: 'https://github.com/vsmidhun21/Dev-Project-Launcher/issues', external: true },
-    { label: 'Contact Us',      href: '/contact' },
+    { label: 'GitHub Repo', href: 'https://github.com/vsmidhun21/DevIgnite', external: true },
+    { label: 'Releases', href: 'https://github.com/vsmidhun21/DevIgnite/releases', external: true },
+    { label: 'Report an Issue', href: 'https://github.com/vsmidhun21/DevIgnite/issues', external: true },
+    { label: 'Contact Us', href: '/contact' },
   ],
 }
 

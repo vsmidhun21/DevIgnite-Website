@@ -110,7 +110,7 @@ export default function Navbar() {
             </button>
 
             <a
-              href="https://github.com/vsmidhun21/Dev-Project-Launcher"
+              href="https://github.com/vsmidhun21/DevIgnite"
               target="_blank"
               rel="noopener noreferrer"
               className="navbar__icon-btn"
