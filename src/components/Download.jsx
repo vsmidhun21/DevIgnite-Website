@@ -13,7 +13,7 @@ export default function DownloadSection() {
             right: -60,
             width: 300,
             height: 300,
-            background: 'radial-gradient(circle, rgba(34,211,238,0.1) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(255,107,53,0.12) 0%, transparent 70%)',
             pointerEvents: 'none',
           }} />
 
@@ -90,7 +90,7 @@ export default function DownloadSection() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     margin: '0 auto 10px',
-                    color: 'var(--accent-indigo)',
+                    color: 'var(--accent-brand)',
                   }}>
                     <Icon size={18} />
                   </div>

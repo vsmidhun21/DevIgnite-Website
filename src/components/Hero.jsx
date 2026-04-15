@@ -14,9 +14,9 @@ const item = {
 
 /* ── Animated App Mockup ── */
 const projects = [
-  { name: 'my-ecommerce', dot: '#10b981', active: true },
-  { name: 'blog-api', dot: '#6366f1', active: false },
-  { name: 'dashboard-ui', dot: '#f59e0b', active: false },
+  { name: 'my-ecommerce', dot: '#ff6b35', active: true },
+  { name: 'blog-api', dot: '#f59e0b', active: false },
+  { name: 'dashboard-ui', dot: '#ef4444', active: false },
   { name: 'auth-service', dot: '#94a3b8', active: false },
 ]
 

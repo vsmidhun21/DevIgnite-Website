@@ -167,7 +167,7 @@ export default function Footer() {
               href="https://midhun-v-s.web.app/"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: 'var(--accent-indigo)' }}
+              style={{ color: 'var(--accent-brand)' }}
             >
               Midhun V S
             </a>

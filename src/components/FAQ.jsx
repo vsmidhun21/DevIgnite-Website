@@ -43,7 +43,7 @@ export default function FAQ() {
           </h2>
           <p className="section-subtitle">
             Everything you need to know about DevIgnite. Can&apos;t find the answer?{' '}
-            <a href="/contact" style={{ color: 'var(--accent-indigo)' }}>Send us a message.</a>
+            <a href="/contact" style={{ color: 'var(--accent-brand)' }}>Send us a message.</a>
           </p>
         </div>
 

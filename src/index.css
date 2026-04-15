@@ -17,12 +17,18 @@
   --bg-secondary:  #080d1c;
   --bg-tertiary:   #0d1325;
 
-  /* Accent Colors */
-  --accent-indigo: #6366f1;
-  --accent-cyan:   #22d3ee;
-  --accent-purple: #a855f7;
-  --accent-pink:   #ec4899;
+  /* Accent Colors (Branding: Orange) */
+  --accent-brand:  #ff6b35;
+  --accent-amber:  #f59e0b;
+  --accent-red:    #ef4444;
+  --accent-gold:   #fbbf24;
   --accent-green:  #10b981;
+
+  /* Legacy aliases for easier transition if needed */
+  --accent-indigo: var(--accent-brand);
+  --accent-cyan:   var(--accent-amber);
+  --accent-purple: var(--accent-red);
+  --accent-pink:   var(--accent-red);
 
   /* Text */
   --text-primary:   #f1f5f9;
@@ -35,9 +41,14 @@
   --glass-hover:  rgba(255, 255, 255, 0.08);
 
   /* Glows */
-  --glow-indigo: rgba(99, 102, 241, 0.45);
-  --glow-cyan:   rgba(34, 211, 238, 0.35);
-  --glow-purple: rgba(168, 85, 247, 0.35);
+  --glow-brand:  rgba(255, 107, 53, 0.45);
+  --glow-amber:  rgba(245, 158, 11, 0.35);
+  --glow-red:    rgba(239, 68, 68, 0.35);
+
+  /* Legacy aliases */
+  --glow-indigo: var(--glow-brand);
+  --glow-cyan:   var(--glow-amber);
+  --glow-purple: var(--glow-red);
 
   /* Radii */
   --radius-sm: 8px;
@@ -100,20 +111,20 @@ ul { list-style: none; }
 /* ===== 4. SCROLLBAR ===== */
 ::-webkit-scrollbar       { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--bg-primary); }
-::-webkit-scrollbar-thumb { background: var(--accent-indigo); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: var(--accent-brand); border-radius: 3px; }
 
 /* ===== 5. TYPOGRAPHY ===== */
 h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); line-height: 1.2; }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--accent-indigo) 0%, var(--accent-cyan) 100%);
+  background: linear-gradient(135deg, var(--accent-brand) 0%, var(--accent-gold) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-warm {
-  background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-pink) 100%);
+  background: linear-gradient(135deg, var(--accent-brand) 0%, var(--accent-red) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -185,7 +196,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); line-height: 1.2; }
   align-items: center;
   gap: 9px;
   padding: 14px 28px;
-  background: linear-gradient(135deg, var(--accent-indigo), var(--accent-purple));
+  background: linear-gradient(135deg, var(--accent-brand), var(--accent-red));
   color: #fff;
   border: none;
   border-radius: var(--radius-md);
@@ -211,7 +222,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); line-height: 1.2; }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 40px var(--glow-indigo);
+  box-shadow: 0 14px 40px var(--glow-brand);
 }
 .btn-primary:hover::after { opacity: 1; }
 .btn-primary:active { transform: translateY(0); }
@@ -236,11 +247,11 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); line-height: 1.2; }
 }
 
 .btn-secondary:hover {
-  border-color: var(--accent-cyan);
-  color: var(--accent-cyan);
+  border-color: var(--accent-amber);
+  color: var(--accent-amber);
   transform: translateY(-2px);
-  box-shadow: 0 10px 32px var(--glow-cyan);
-  background: rgba(34, 211, 238, 0.05);
+  box-shadow: 0 10px 32px var(--glow-amber);
+  background: rgba(245, 158, 11, 0.05);
 }
 .btn-secondary:active { transform: translateY(0); }
 
@@ -273,7 +284,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); line-height: 1.2; }
   top: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent-indigo), var(--accent-cyan), var(--accent-purple));
+  background: linear-gradient(90deg, var(--accent-brand), var(--accent-amber), var(--accent-red));
   z-index: 9999;
   transform-origin: left;
   will-change: transform;
@@ -286,7 +297,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); line-height: 1.2; }
   right: 32px;
   width: 46px;
   height: 46px;
-  background: linear-gradient(135deg, var(--accent-indigo), var(--accent-purple));
+  background: linear-gradient(135deg, var(--accent-brand), var(--accent-red));
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -295,12 +306,12 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); line-height: 1.2; }
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  box-shadow: 0 8px 24px var(--glow-indigo);
+  box-shadow: 0 8px 24px var(--glow-brand);
   transition: var(--transition);
 }
 .back-to-top:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 36px var(--glow-indigo);
+  box-shadow: 0 14px 36px var(--glow-brand);
 }
 
 /* ===== 11. NAVBAR ===== */
@@ -489,8 +500,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); line-height: 1.2; }
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(99,102,241,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99,102,241,0.06) 1px, transparent 1px);
+    linear-gradient(rgba(255,107,53,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,107,53,0.06) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black, transparent);
 }
@@ -505,7 +516,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); line-height: 1.2; }
 .hero__orb--1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(99,102,241,0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 107, 53, 0.25) 0%, transparent 70%);
   top: -15%;
   right: -10%;
   animation-delay: 0s;
@@ -514,7 +525,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); line-height: 1.2; }
 .hero__orb--2 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(168,85,247,0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, transparent 70%);
   bottom: -10%;
   left: -10%;
   animation-delay: 2.5s;
@@ -523,7 +534,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); line-height: 1.2; }
 .hero__orb--3 {
   width: 350px;
   height: 350px;
-  background: radial-gradient(circle, rgba(34,211,238,0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.15) 0%, transparent 70%);
   top: 40%;
   left: 30%;
   animation-delay: 5s;
