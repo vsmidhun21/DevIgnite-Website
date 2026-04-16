@@ -173,7 +173,7 @@ export default function Footer() {
             </a>
             .
           </p>
-          <span className="footer__version">v1.0 · Work in Progress</span>
+          <span className="footer__version">v2.0 · Work in Progress</span>
         </div>
       </div>
     </footer>
