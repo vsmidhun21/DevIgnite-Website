@@ -143,7 +143,7 @@ export default function Hero() {
             <motion.div className="hero__ctas" variants={item}>
               <a
                 id="hero-download-btn"
-                href="https://github.com/vsmidhun21/DevIgnite/releases/download/DevIgnite-v1.0.0/DevIgniteSetup-v1.0.0.exe"
+                href="https://github.com/vsmidhun21/DevIgnite/releases/download/DevIgnite-v1.0.0/DevIgniteSetup-v1.1.0.exe"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
