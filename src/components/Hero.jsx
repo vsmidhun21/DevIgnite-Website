@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { Download, Play, Square, FileText } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa'
+import { useState } from 'react'
+import ThankYouPopup from './ThankYouPopup'
 
 /* ── reusable stagger variants ── */
 const container = {
@@ -107,6 +109,12 @@ function AppMockup() {
 }
 
 export default function Hero() {
+  const [showThanks, setShowThanks] = useState(false)
+
+  const handleDownload = () => {
+    setShowThanks(true)
+  }
+
   return (
     <section className="hero section" id="hero">
       {/* Animated BG */}
@@ -149,8 +157,7 @@ export default function Hero() {
               <a
                 id="hero-download-btn"
                 href="https://github.com/vsmidhun21/DevIgnite/releases/download/DevIgnite-v2.0.0/DevIgniteSetup-v2.0.0.exe"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={handleDownload}
                 className="btn-primary"
               >
                 <Download size={17} />
@@ -192,6 +199,11 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
+
+      <ThankYouPopup
+        isOpen={showThanks}
+        onClose={() => setShowThanks(false)}
+      />
     </section>
   )
 }

@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion'
-import { Image as ImageIcon, Maximize2 } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Image as ImageIcon, Maximize2, X } from 'lucide-react'
+import { useState } from 'react'
 import gallery1 from '../assets/gallery1.png'
 import gallery2 from '../assets/gallery2.png'
 
@@ -10,6 +11,8 @@ const images = [
 ]
 
 export default function Gallery() {
+  const [selectedImg, setSelectedImg] = useState(null)
+
   return (
     <section className="section" id="gallery">
       <div className="container">
@@ -30,6 +33,7 @@ export default function Gallery() {
               className="gallery-item"
               data-aos="fade-up"
               data-aos-delay={i * 100}
+              onClick={() => setSelectedImg(img.src)}
             >
               <div className="gallery-image-wrap">
                 <img src={img.src} alt={img.title} />
@@ -47,6 +51,31 @@ export default function Gallery() {
           ))}
         </div>
       </div>
+
+      <AnimatePresence>
+        {selectedImg && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="modal-overlay"
+            onClick={() => setSelectedImg(null)}
+          >
+            <button className="modal-close" onClick={() => setSelectedImg(null)}>
+              <X size={24} />
+            </button>
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="lightbox-content"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img src={selectedImg} alt="Preview" className="lightbox-image" />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }
