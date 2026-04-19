@@ -14,10 +14,10 @@ const item = {
 
 /* ── Animated App Mockup ── */
 const projects = [
-  { name: 'my-ecommerce', dot: '#ff6b35', active: true },
-  { name: 'blog-api', dot: '#f59e0b', active: false },
-  { name: 'dashboard-ui', dot: '#ef4444', active: false },
-  { name: 'auth-service', dot: '#94a3b8', active: false },
+  { name: 'my-ecommerce', dot: '#ff6b35', active: true, pinned: true },
+  { name: 'blog-api', dot: '#f59e0b', active: false, pinned: false },
+  { name: 'dashboard-ui', dot: '#ef4444', active: false, pinned: false },
+  { name: 'auth-service', dot: '#94a3b8', active: false, pinned: false },
 ]
 
 function AppMockup() {
@@ -76,11 +76,16 @@ function AppMockup() {
           </div>
 
           <div>
-            <p className="mockup-info-item-label" style={{ marginBottom: 8 }}>Environment</p>
-            <div className="mockup-env-tabs">
-              <span className="mockup-env-tab mockup-env-tab--active">dev</span>
-              <span className="mockup-env-tab">test</span>
-              <span className="mockup-env-tab">prod</span>
+            <p className="mockup-info-item-label" style={{ marginBottom: 8 }}>Environment & Actions</p>
+            <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+              <div className="mockup-env-tabs">
+                <span className="mockup-env-tab mockup-env-tab--active">dev</span>
+                <span className="mockup-env-tab">test</span>
+              </div>
+              <div style={{ display: 'flex', gap: 4 }}>
+                <span title="Custom Action" style={{ background: 'var(--glass-bg)', padding: '4px 8px', borderRadius: 4, fontSize: '0.65rem', border: '1px solid var(--glass-border)' }}>🚀 Deploy</span>
+                <span title="Custom Action" style={{ background: 'var(--glass-bg)', padding: '4px 8px', borderRadius: 4, fontSize: '0.65rem', border: '1px solid var(--glass-border)' }}>🛠️ Build</span>
+              </div>
             </div>
           </div>
 
@@ -123,7 +128,7 @@ export default function Hero() {
             <motion.div variants={item}>
               <div className="hero__badge">
                 <span className="hero__badge-dot" />
-                Now Available for Windows
+                V-2.0 Available for Windows
               </div>
             </motion.div>
 

@@ -3,6 +3,8 @@ import Hero        from '../components/Hero'
 import Features    from '../components/Features'
 import HowItWorks  from '../components/HowItWorks'
 import Download    from '../components/Download'
+import Gallery     from '../components/Gallery'
+import Videos      from '../components/Videos'
 import FAQ         from '../components/FAQ'
 import Support     from '../components/Support'
 
@@ -24,7 +26,9 @@ export default function Home() {
       <Hero />
       <Features />
       <HowItWorks />
+      <Gallery />
       <Download />
+      <Videos />
       <FAQ />
       <Support />
     </motion.div>

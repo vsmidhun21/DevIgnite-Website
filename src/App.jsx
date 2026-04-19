@@ -10,6 +10,7 @@ import ScrollProgress from './components/ScrollProgress'
 import BackToTop from './components/BackToTop'
 import Home from './pages/Home'
 import Contact from './pages/Contact'
+import Docs from './pages/Docs'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -26,6 +27,7 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/docs" element={<Docs />} />
       </Routes>
     </AnimatePresence>
   )

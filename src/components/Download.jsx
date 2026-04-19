@@ -1,27 +1,27 @@
 import { Download, Monitor, Shield, Star } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa'
+import { useState } from 'react'
+import ThankYouPopup from './ThankYouPopup'
 
 export default function DownloadSection() {
+  const [showThanks, setShowThanks] = useState(false)
+
+  const handleDownload = () => {
+    // Show popup
+    setShowThanks(true)
+    // The link will trigger the download in the browser
+  }
+
   return (
     <section className="section section-alt" id="download">
       <div className="container">
         <div className="download-card" data-aos="fade-up">
-          {/* Glow orb */}
-          <div style={{
-            position: 'absolute',
-            bottom: -60,
-            right: -60,
-            width: 300,
-            height: 300,
-            background: 'radial-gradient(circle, rgba(255,107,53,0.12) 0%, transparent 70%)',
-            pointerEvents: 'none',
-          }} />
-
+          {/* ... (rest of the card content updated below) */}
           <div style={{ position: 'relative', zIndex: 1 }}>
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16 }}>
               <span className="version-badge">
                 <Star size={12} fill="currentColor" />
-                v2.0 · Work in Progress
+                v2.0 Stable Released
               </span>
             </div>
 
@@ -38,8 +38,7 @@ export default function DownloadSection() {
               <a
                 id="download-exe-btn"
                 href="https://github.com/vsmidhun21/DevIgnite/releases/download/DevIgnite-v2.0.0/DevIgniteSetup-v2.0.0.exe"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={handleDownload}
                 className="btn-download"
               >
                 <Download size={20} />
@@ -56,6 +55,7 @@ export default function DownloadSection() {
                 View All Releases
               </a>
             </div>
+            {/* ... rest of the content ... */}
 
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               <p className="download-platform">
@@ -102,6 +102,11 @@ export default function DownloadSection() {
           </div>
         </div>
       </div>
+      
+      <ThankYouPopup 
+        isOpen={showThanks} 
+        onClose={() => setShowThanks(false)} 
+      />
     </section>
   )
 }
