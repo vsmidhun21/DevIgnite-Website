@@ -35,14 +35,14 @@ export default function ThankYouPopup({ isOpen, onClose }) {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ type: 'spring', damping: 12, delay: 0.1 }}
-                style={{ 
-                  width: '64px', 
-                  height: '64px', 
-                  background: 'rgba(16,185,129,0.1)', 
-                  borderRadius: '50%', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center', 
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  background: 'rgba(16,185,129,0.1)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                   margin: '0 auto 24px',
                   color: '#10b981'
                 }}
@@ -52,24 +52,24 @@ export default function ThankYouPopup({ isOpen, onClose }) {
 
               <h2 style={{ fontSize: '1.75rem', marginBottom: '12px' }}>Thanks for Downloading!</h2>
               <p style={{ color: 'var(--text-muted)', marginBottom: '32px', lineHeight: 1.6 }}>
-                Your DevIgnite installer should start automatically. If it doesn't, 
-                <a href="https://github.com/vsmidhun21/DevIgnite/releases/download/DevIgnite-v2.0.0/DevIgniteSetup-v2.0.0.exe" style={{ color: 'var(--accent-brand)', marginLeft: '4px', textDecoration: 'underline' }}>click here</a>.
+                Your DevIgnite installer should start automatically. If it doesn't,
+                <a href="https://github.com/vsmidhun21/DevIgnite/releases/download/v2.3.1/DevIgniteSetup-v2.3.1.exe" style={{ color: 'var(--accent-brand)', marginLeft: '4px', textDecoration: 'underline' }}>click here</a>.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                <a 
-                  href="https://github.com/vsmidhun21/DevIgnite" 
-                  target="_blank" 
+                <a
+                  href="https://github.com/vsmidhun21/DevIgnite"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary" 
+                  className="btn-primary"
                   style={{ width: '100%', justifyContent: 'center' }}
                 >
                   <FaGithub size={18} />
                   <span>Star on GitHub</span>
                 </a>
-                <button 
+                <button
                   onClick={onClose}
-                  className="btn-secondary" 
+                  className="btn-secondary"
                   style={{ width: '100%', justifyContent: 'center' }}
                 >
                   Close
