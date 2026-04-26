@@ -21,7 +21,7 @@ export default function DownloadSection() {
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16 }}>
               <span className="version-badge">
                 <Star size={12} fill="currentColor" />
-                v2.0 Stable Released
+                v3.0 Stable Released
               </span>
             </div>
 
@@ -37,7 +37,7 @@ export default function DownloadSection() {
             <div className="download-ctas">
               <a
                 id="download-exe-btn"
-                href="https://github.com/vsmidhun21/DevIgnite/releases/download/v2.3.1/DevIgniteSetup-v2.3.1.exe"
+                href="https://github.com/vsmidhun21/DevIgnite/releases/download/v3.0.0/DevIgniteSetup-v3.0.0.exe"
                 onClick={handleDownload}
                 className="btn-download"
               >
@@ -60,7 +60,7 @@ export default function DownloadSection() {
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               <p className="download-platform">
                 <Monitor size={14} />
-                Windows 10 / 11 · 64-bit · ~105MB
+                Windows 10 / 11 · 64-bit · ~115MB
               </p>
             </div>
 

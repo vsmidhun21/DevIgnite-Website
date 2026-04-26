@@ -53,7 +53,7 @@ export default function ThankYouPopup({ isOpen, onClose }) {
               <h2 style={{ fontSize: '1.75rem', marginBottom: '12px' }}>Thanks for Downloading!</h2>
               <p style={{ color: 'var(--text-muted)', marginBottom: '32px', lineHeight: 1.6 }}>
                 Your DevIgnite installer should start automatically. If it doesn't,
-                <a href="https://github.com/vsmidhun21/DevIgnite/releases/download/v2.3.1/DevIgniteSetup-v2.3.1.exe" style={{ color: 'var(--accent-brand)', marginLeft: '4px', textDecoration: 'underline' }}>click here</a>.
+                <a href="https://github.com/vsmidhun21/DevIgnite/releases/download/v3.0.0/DevIgniteSetup-v3.0.0.exe" style={{ color: 'var(--accent-brand)', marginLeft: '4px', textDecoration: 'underline' }}>click here</a>.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>

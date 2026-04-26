@@ -136,7 +136,7 @@ export default function Hero() {
             <motion.div variants={item}>
               <div className="hero__badge">
                 <span className="hero__badge-dot" />
-                V-2.0 Available for Windows
+                V-3.0 Available for Windows
               </div>
             </motion.div>
 
@@ -156,7 +156,7 @@ export default function Hero() {
             <motion.div className="hero__ctas" variants={item}>
               <a
                 id="hero-download-btn"
-                href="https://github.com/vsmidhun21/DevIgnite/releases/download/v2.3.1/DevIgniteSetup-v2.3.1.exe"
+                href="https://github.com/vsmidhun21/DevIgnite/releases/download/v3.0.0/DevIgniteSetup-v3.0.0.exe"
                 onClick={handleDownload}
                 className="btn-primary"
               >
