@@ -30,7 +30,7 @@ function AppMockup() {
         <span className="mockup-dot mockup-dot--red" />
         <span className="mockup-dot mockup-dot--amber" />
         <span className="mockup-dot mockup-dot--green" />
-        <span className="mockup-title">DevIgnite — Project Launcher</span>
+        <span className="mockup-title">DevIgnite — Intelligent Project Launcher</span>
       </div>
 
       {/* Body */}
@@ -48,9 +48,15 @@ function AppMockup() {
 
         {/* Main panel */}
         <div className="mockup-main">
-          <div>
-            <p className="mockup-project-header">my-ecommerce</p>
-            <p className="mockup-path">~/projects/my-ecommerce-app</p>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+            <div>
+              <p className="mockup-project-header">my-ecommerce</p>
+              <p className="mockup-path">~/projects/my-ecommerce-app</p>
+            </div>
+            <div className="mockup-status-badge" style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#10b981', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+              <span className="mockup-status-dot" style={{ background: '#10b981' }} />
+              Healthy
+            </div>
           </div>
 
           <div className="mockup-divider" />
@@ -64,8 +70,8 @@ function AppMockup() {
               </span>
             </div>
             <div>
-              <p className="mockup-info-item-label">Server</p>
-              <p className="mockup-info-item-value">localhost:3000</p>
+              <p className="mockup-info-item-label">Docker</p>
+              <p className="mockup-info-item-value" style={{ color: '#0db7ed' }}>Active</p>
             </div>
             <div>
               <p className="mockup-info-item-label">Time Tracked</p>
@@ -86,7 +92,7 @@ function AppMockup() {
               </div>
               <div style={{ display: 'flex', gap: 4 }}>
                 <span title="Custom Action" style={{ background: 'var(--glass-bg)', padding: '4px 8px', borderRadius: 4, fontSize: '0.65rem', border: '1px solid var(--glass-border)' }}>🚀 Deploy</span>
-                <span title="Custom Action" style={{ background: 'var(--glass-bg)', padding: '4px 8px', borderRadius: 4, fontSize: '0.65rem', border: '1px solid var(--glass-border)' }}>🛠️ Build</span>
+                <span title="Code Health Check" className="mockup-scan-btn" style={{ background: 'rgba(99, 102, 241, 0.15)', padding: '4px 8px', borderRadius: 4, fontSize: '0.65rem', border: '1px solid rgba(99, 102, 241, 0.3)', color: '#a5b4fc', cursor: 'default' }}>🩺 Health Check</span>
               </div>
             </div>
           </div>
@@ -141,16 +147,13 @@ export default function Hero() {
             </motion.div>
 
             <motion.h1 className="hero__title" variants={item}>
-              Ignite Your{' '}
-              <span className="gradient-text">Development</span>
-              <br />
-              Workflow
+              Manage, Analyze, and <br />
+              Launch Your{' '}
+              <span className="gradient-text">Projects</span>
             </motion.h1>
 
             <motion.p className="hero__desc" variants={item}>
-              Stop wasting time on repetitive setup. DevIgnite launches your projects
-              instantly, starts dev servers automatically, tracks your working time, and
-              manages environments — all from a single click.
+              DevIgnite is your intelligent project companion. Automate your workflow with 1-click launches, Docker support, and deep code health insights. Track your productivity and manage everything from a single, beautiful interface.
             </motion.p>
 
             <motion.div className="hero__ctas" variants={item}>
@@ -177,9 +180,9 @@ export default function Hero() {
 
             <motion.div className="hero__stats" variants={item}>
               {[
-                { value: '5+', label: 'Features' },
-                { value: '1-Click', label: 'Project Launch' },
-                { value: 'Free', label: 'Open Source' },
+                { value: '20+', label: 'Features' },
+                { value: '1-Click', label: 'Automation' },
+                { value: 'Insights', label: 'Code Health' },
               ].map((s) => (
                 <div key={s.label}>
                   <p className="hero__stat-value gradient-text">{s.value}</p>

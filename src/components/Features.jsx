@@ -1,61 +1,74 @@
 import { Rocket, Server, Clock, Shuffle, ScrollText } from 'lucide-react'
 
 const features = [
+  // Productivity & Insights
   {
-    id: 'one-click-launch',
+    id: 'daily-briefing',
     icon: Rocket,
-    title: 'One-Click Project Launch',
-    desc: 'Open your IDE, terminal, and browser all at once. Add any project and launch it instantly with a single click — no more manual setup.',
+    title: 'Daily Project Briefing',
+    desc: 'Get an intelligent overview of your projects, pending tasks, and recent changes every time you start your day.',
     color: '#6366f1',
     glow: 'rgba(99,102,241,0.12)',
   },
   {
-    id: 'auto-dev-server',
-    icon: Server,
-    title: 'Auto Dev Server Start',
-    desc: "DevIgnite detects your project's framework and starts the dev server automatically. Works with Next.js, Vite, Create React App, and more.",
-    color: '#22d3ee',
-    glow: 'rgba(34,211,238,0.12)',
+    id: 'reports-tracking',
+    icon: Clock,
+    title: 'Reports & Tracking',
+    desc: 'Generate weekly and monthly productivity reports. Track time spent on each project with manual timer entries.',
+    color: '#10b981',
+    glow: 'rgba(16,185,129,0.12)',
   },
-  {
-    id: 'notes-todo',
-    icon: ScrollText,
-    title: "Notes & To-do's",
-    desc: 'Keep track of project-specific tasks and ideas right within the app. Organized, persistent, and always accessible.',
-    color: '#ec4899',
-    glow: 'rgba(236,72,153,0.12)',
-  },
+  // Workflow & Automation
   {
     id: 'custom-buttons',
     icon: Rocket,
-    title: 'Custom Project Buttons',
-    desc: 'Define your own launch actions. Create buttons for deployment, building, or any custom script you run frequently.',
+    title: 'Custom Action Buttons',
+    desc: 'Define your own launch actions for deployment, building, or any custom script you run frequently.',
     color: '#f97316',
     glow: 'rgba(249,115,22,0.12)',
   },
   {
-    id: 'resizable-layout',
+    id: 'docker-support',
+    icon: Server,
+    title: 'Docker Support',
+    desc: 'Instantly start and manage container-based projects with built-in Docker Compose integration.',
+    color: '#0db7ed',
+    glow: 'rgba(13,183,237,0.12)',
+  },
+  // Code & Debugging
+  {
+    id: 'code-health',
     icon: Shuffle,
-    title: 'Resizable Layout',
-    desc: 'A flexible, modern UI that adapts to your workflow. Resize sidebars and panels to create your perfect development environment.',
+    title: 'Code Health Checker',
+    desc: 'Analyze your codebase for potential issues, complexity, and best practices with a single click.',
     color: '#8b5cf6',
     glow: 'rgba(139,92,246,0.12)',
   },
   {
-    id: 'time-tracking',
-    icon: Clock,
-    title: 'Time Tracking',
-    desc: 'Automatically track how much time you spend on each project. View session history and total hours worked — great for freelancers.',
-    color: '#10b981',
-    glow: 'rgba(16,185,129,0.12)',
-  },
-  {
-    id: 'execution-logs',
+    id: 'global-search',
     icon: ScrollText,
-    title: 'Execution Logs',
-    desc: 'Every command and server output is captured and stored. Review past logs, debug issues and track what happened in each session.',
+    title: 'Global & Log Search',
+    desc: 'Search across all your projects or dive deep into execution logs to debug issues faster.',
     color: '#f59e0b',
     glow: 'rgba(245,158,11,0.12)',
+  },
+  // Project Management
+  {
+    id: 'project-org',
+    icon: Shuffle,
+    title: 'Project Organization',
+    desc: 'Keep your workspace tidy with project tags, archiving, and the ability to pin or star your favorites.',
+    color: '#ec4899',
+    glow: 'rgba(236,72,153,0.12)',
+  },
+  // Data Management
+  {
+    id: 'data-mgmt',
+    icon: Server,
+    title: 'Import & Export',
+    desc: 'Backup and restore your entire project configuration easily with JSON-based import and export.',
+    color: '#22d3ee',
+    glow: 'rgba(34,211,238,0.12)',
   },
 ]
 

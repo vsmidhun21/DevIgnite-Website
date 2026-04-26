@@ -10,112 +10,157 @@ const docsContent = {
       <>
         <div className="docs-badge">Core Concept</div>
         <h2>Welcome to DevIgnite</h2>
-        <p>Developer workflows are often cluttered with repetitive terminal commands, manual IDE launches, and scattered environment variables. DevIgnite is a <b>centralized project launcher</b> designed to automate these tasks with a single click.</p>
+        <p>DevIgnite is a <b>centralized project launcher</b> and productivity suite designed for modern developers. It automates repetitive setup tasks, tracks your progress, and provides intelligent insights into your codebase.</p>
 
         <div className="docs-info-box">
           <Shield size={20} />
           <div>
-            <strong>Privacy First:</strong> DevIgnite runs entirely on your local machine. No telemetry, no cloud syncing, and no account required.
+            <strong>Privacy First:</strong> DevIgnite runs entirely on your local machine. Your project data, logs, and tracking history never leave your computer.
           </div>
         </div>
 
-        <h3>Quick Installation</h3>
-        <p>To get started, follow these simple steps:</p>
+        <h3>Installation</h3>
+        <p>Get up and running in minutes:</p>
         <ul>
-          <li>Download the installer from the <a href="/" className="highlight-link">homepage</a>.</li>
-          <li>Run <code>DevIgniteSetup.exe</code> on your Windows machine.</li>
-          <li>Launch the application and grant the necessary permissions for terminal access.</li>
-        </ul>
-
-        <h3>System Requirements</h3>
-        <p>DevIgnite is optimized for modern Windows environments:</p>
-        <ul>
-          <li>Windows 10 or 11 (64-bit)</li>
-          <li>Node.js installed (for script execution)</li>
-          <li>VS Code or your preferred IDE in system PATH</li>
+          <li>Download the latest installer from the <a href="/" className="highlight-link">homepage</a>.</li>
+          <li>Run <code>DevIgniteSetup-v3.0.0.exe</code> on Windows.</li>
+          <li>Launch the app and add your first project directory.</li>
         </ul>
       </>
     )
   },
-  'project-setup': {
-    title: 'Project Setup',
+  'project-management': {
+    title: 'Project Management',
     icon: Layout,
     content: (
       <>
-        <div className="docs-badge">Configuration</div>
-        <h2>Adding Projects</h2>
-        <p>DevIgnite makes it easy to import existing repositories into your dashboard. When you add a folder, the application scans for configuration files to automate the setup.</p>
+        <div className="docs-badge">Organization</div>
+        <h2>Organizing Your Workspace</h2>
+        <p>DevIgnite helps you stay focused by organizing your projects with tags, status indicators, and priority levels.</p>
 
-        <h3>Detection Logic</h3>
-        <p>Our automation engine recognizes the following project types automatically:</p>
+        <h3>Tags & Metadata</h3>
+        <p>Assign custom tags to projects to group them by stack (e.g., "Frontend", "Backend") or client. Tags are searchable and help in quick filtering.</p>
+
+        <h3>Pinning & Archiving</h3>
         <ul>
-          <li><b>Next.js / React:</b> Scans for <code>package.json</code> and looks for <code>dev</code> or <code>start</code> scripts.</li>
-          <li><b>Vite / Svelte:</b> Identifies <code>vite.config.js</code> for server optimization.</li>
-          <li><b>Python:</b> Looks for <code>requirements.txt</code> or <code>main.py</code>.</li>
+          <li><b>Pin:</b> Keep your current active projects at the top of the sidebar.</li>
+          <li><b>Star:</b> Mark important projects for quick access.</li>
+          <li><b>Archive:</b> Hide completed or old projects without deleting their configuration.</li>
         </ul>
-
-        <div className="docs-info-box warning">
-          <Settings size={20} />
-          <div>
-            <strong>Path Configuration:</strong> Ensure your project path doesn't contain spaces if you are using some legacy terminal environments to avoid command parsing errors.
-          </div>
-        </div>
-
-        <h3>Pinning & Sorting</h3>
-        <p>You can <b>Pin</b> your most active projects to keep them at the top of the sidebar. Right-click any project to toggle its pinned status.</p>
       </>
     )
   },
-  'custom-actions': {
-    title: 'Advanced Actions',
+  'intelligence': {
+    title: 'Daily Briefing & Insights',
     icon: Zap,
     content: (
       <>
-        <div className="docs-badge">Power Features</div>
-        <h2>Custom Commands</h2>
-        <p>Beyond simple "Start" and "Stop", DevIgnite allows you to define <b>Custom Action Buttons</b> for specific project workflows like deployment or building.</p>
+        <div className="docs-badge">Productivity</div>
+        <h2>Intelligent Workflow</h2>
+        <p>Version 3.0 introduces deep intelligence features to help you start your day with clarity.</p>
 
-        <h3>Defining Actions</h3>
-        <ol>
-          <li>Open project details and scroll to <b>Actions</b>.</li>
-          <li>Click <span className="text-highlight">Add Custom Action</span>.</li>
-          <li>Enter a label (e.g., <code>🚀 Deploy to Vercel</code>).</li>
-          <li>Enter the shell command (e.g., <code>npm run build && vercel --prod</code>).</li>
-        </ol>
+        <h3>Daily Briefing</h3>
+        <p>Every time you launch DevIgnite, the <b>Daily Briefing</b> shows you a summary of your pending TODOs, recent project changes, and your goals for the day.</p>
 
-        <pre className="docs-code-block">
-          <code>
-            {`// Example: Multi-command action
-npm install && npm run dev`}
-          </code>
-        </pre>
-
-        <h3>Resizable Workspace</h3>
-        <p>In version 2.0+, the layout is fully responsive. You can resize the <b>Log Terminal</b> and <b>Sidebar</b> to fit your screen real estate. These settings are persistency-saved per workspace.</p>
+        <h3>Code Health Checker</h3>
+        <p>The <b>Code Health Checker</b> analyzes your project structure and files to provide a "Health Score". It identifies:</p>
+        <ul>
+          <li>Missing dependencies or config files.</li>
+          <li>Large files that might need refactoring.</li>
+          <li>Potential security risks in local environment files.</li>
+        </ul>
       </>
     )
   },
-  'troubleshooting': {
-    title: 'Troubleshooting',
-    icon: HelpCircle,
+  'time-tracking': {
+    title: 'Time & Reports',
+    icon: Clock,
     content: (
       <>
-        <div className="docs-badge">Support</div>
-        <h2>Common Issues</h2>
-        <p>If you encounter issues while using DevIgnite, refer to the common solutions below.</p>
+        <div className="docs-badge">Tracking</div>
+        <h2>Productivity Analytics</h2>
+        <p>Monitor your effort across different projects with automated and manual tracking.</p>
 
-        <h3>Terminal not opening</h3>
-        <p>Ensure your preferred terminal (PowerShell, CMD, or Git Bash) is accessible via the system environment variables.</p>
+        <h3>Tracking Time</h3>
+        <ul>
+          <li><b>Automatic:</b> DevIgnite tracks time while a project is "Launched".</li>
+          <li><b>Manual Entry:</b> Forgot to start the app? Add manual time entries to keep your history accurate.</li>
+        </ul>
 
-        <h3>Port already in use</h3>
-        <p>If your dev server fails to start, DevIgnite will notify you. Use the <code>Kill Process</code> action in the logs tab to force clear the port.</p>
+        <h3>Reports</h3>
+        <p>View detailed <b>Weekly and Monthly Reports</b> that breakdown your development time by project and category. Perfect for freelancers and performance tracking.</p>
+      </>
+    )
+  },
+  'search-debug': {
+    title: 'Search & Debugging',
+    icon: Terminal,
+    content: (
+      <>
+        <div className="docs-badge">Efficiency</div>
+        <h2>Finding What Matters</h2>
+        <p>Don't waste time digging through folders or scrolling through infinite logs.</p>
 
-        <div style={{ marginTop: '40px' }} className="docs-info-box">
-          <Terminal size={20} />
-          <div>
-            Refer to the <a href="https://github.com/vsmidhun21/DevIgnite" target="_blank" rel="noreferrer" className="highlight-link">GitHub Repository</a> for detailed logs and issue reporting.
-          </div>
-        </div>
+        <h3>Global Search</h3>
+        <p>Use <code>Ctrl + F</code> (Global Search) to find projects, tags, or even specific notes across your entire workspace instantly.</p>
+
+        <h3>Log Search</h3>
+        <p>The integrated terminal logs are now searchable. Find specific error codes or success messages within your project execution history.</p>
+      </>
+    )
+  },
+  'docker-support': {
+    title: 'Docker Support',
+    icon: Code,
+    content: (
+      <>
+        <div className="docs-badge">Automation</div>
+        <h2>Container Integration</h2>
+        <p>DevIgnite v3.0 now natively supports Docker-based workflows.</p>
+        <p>If a project contains a <code>docker-compose.yml</code> file, DevIgnite will show a <b>Docker</b> tab allowing you to:</p>
+        <ul>
+          <li>Start/Stop all containers with one click.</li>
+          <li>View real-time logs from your Docker environment.</li>
+          <li>Check container health status directly from the dashboard.</li>
+        </ul>
+      </>
+    )
+  },
+  'data-management': {
+    title: 'Import & Export',
+    icon: Shield,
+    content: (
+      <>
+        <div className="docs-badge">Security</div>
+        <h2>Data Portability</h2>
+        <p>Your configuration is yours to keep. DevIgnite makes it easy to move between machines or backup your settings.</p>
+
+        <h3>JSON Backup</h3>
+        <p>Go to <b>Settings &gt; Data</b> to export your entire project list, tags, and custom buttons as a single JSON file.</p>
+
+        <h3>Restore</h3>
+        <p>Importing is just as simple. Just select your backup file, and DevIgnite will reconstruct your workspace exactly as it was.</p>
+      </>
+    )
+  },
+  'settings': {
+    title: 'Settings & Shortcuts',
+    icon: Settings,
+    content: (
+      <>
+        <div className="docs-badge">Customization</div>
+        <h2>Personalize Your Experience</h2>
+        <p>Tailor DevIgnite to match your development style.</p>
+
+        <h3>Key Preferences</h3>
+        <ul>
+          <li><b>Notifications:</b> Get desktop alerts when servers start or health checks complete.</li>
+          <li><b>Auto Update:</b> Stay on the latest version with background updates.</li>
+          <li><b>Theme:</b> Toggle between system, light, and dark modes.</li>
+        </ul>
+
+        <h3>Keyboard Shortcuts</h3>
+        <p>Master the app with built-in shortcuts for switching projects, launching terminals, and opening search.</p>
       </>
     )
   }
