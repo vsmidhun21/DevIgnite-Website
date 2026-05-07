@@ -23,7 +23,7 @@ const docsContent = {
         <p>Get up and running in minutes:</p>
         <ul>
           <li>Download the latest installer from the <a href="/" className="highlight-link">homepage</a>.</li>
-          <li>Run <code>DevIgniteSetup-v3.0.0.exe</code> on Windows.</li>
+          <li>Run <code>DevIgniteSetup-v3.1.0.exe</code> on Windows.</li>
           <li>Launch the app and add your first project directory.</li>
         </ul>
       </>
